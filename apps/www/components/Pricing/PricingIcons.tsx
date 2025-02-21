@@ -12,7 +12,7 @@ export const Check = () => (
 export const IconPricingIncludedCheck = (props: any) => (
   <span className="mx-auto">
     <Check />
-    <span className="sr-only">Included in {props.tier}</span>
+    <span className="sr-only">Included in {props.plan}</span>
   </span>
 )
 
@@ -23,7 +23,7 @@ export const IconPricingMinus = (props: any) => (
       width="18"
       height="18"
       fill="none"
-      className="text-scale-700"
+      className="text-border-control"
     >
       <path
         fill="currentColor"
@@ -32,26 +32,6 @@ export const IconPricingMinus = (props: any) => (
         clipRule="evenodd"
       />
     </svg>
-    <span className="sr-only">Not included in {props.tier}</span>
-  </>
-)
-
-export const IconPricingInfo = () => (
-  <>
-    <svg
-      className="text-scale-900 -ml-0.5"
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="none"
-    >
-      <path
-        fill="currentColor"
-        fillRule="evenodd"
-        d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm.724-11.97c0 .463-.328.764-.774.764-.436 0-.773-.3-.773-.764s.337-.783.774-.783c.445 0 .773.319.773.783Zm1.455 6.194H9.877v-.855h1.628v-2.956H9.877v-.828h2.674v3.784h1.628v.855Z"
-        clipRule="evenodd"
-      />
-    </svg>
-    <span className="sr-only">Info</span>
+    <span className="sr-only">Not included in {props.plan}</span>
   </>
 )

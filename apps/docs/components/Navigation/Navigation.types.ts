@@ -9,27 +9,28 @@ export interface NavMenuGroup {
 
 export interface NavMenuSection {
   name: string
-  url?: string
-  items: NavMenuSection[]
-}
-
-export interface References {
-  [key: string]: {
-    name: string
-    library?: string
-    versions: string[]
-    icon: string
-    currentVersion?: string
-  }
+  url?: `/${string}` | `https://${string}`
+  items: Partial<NavMenuSection>[]
 }
 
 type MenuItem = {
   label: string
   icon?: string
-  href?: string
+  href?: `/${string}` | `https://${string}`
   level?: string
   hasLightIcon?: boolean
   community?: boolean
 }
 
-export type HomepageMenuItems = MenuItem[][]
+export type DropdownMenuItem = MenuItem & {
+  menuItems?: MenuItem[][]
+}
+
+export type GlobalMenuItems = DropdownMenuItem[][]
+
+export type NavMenuConstant = Readonly<{
+  title: string
+  icon: string
+  url?: `/${string}`
+  items: ReadonlyArray<Partial<NavMenuSection>>
+}>
